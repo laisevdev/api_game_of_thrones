@@ -1,0 +1,30 @@
+{% extends 'api/base.html' %}
+
+{% block content %}
+
+<main>
+    <div>
+        <h1>
+            Tudo sobre a melhor série dos últimos tempos!
+        </h1>
+        <h2>
+            Os melhores personagens dos últimos tempos:
+        </h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for character in characters %}
+                    <tr>
+                        <td>{{ character }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
+
+{% endblock %}
