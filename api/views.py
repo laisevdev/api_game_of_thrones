@@ -43,6 +43,26 @@ def westeros_houses(request):
     houses = [house['slug'].upper() for house in data]
     return render(request, 'api/houses.html', {'houses': houses})
 
+def houses_details(request):
+    url = 'https://api.gameofthronesquotes.xyz/v1/houses'
+    response = requests.get(url)
+    data = response.json()
 
+    all_about_houses = []
+
+    for house in data:
+        name = house.get('name')
+        slug = house.get('slug').upper()
+        members = house.get('members')
+
+        
+        if name and slug and members:
+            member_names = [member.get('name') for member in members if member.get('name')]
+            all_about_houses.append({
+                'name': name,
+                'house_slug': slug,
+                'members': member_names
+            })
+    return render(request, 'api/houses_details.html', {'all_about_houses': all_about_houses})
 
 
