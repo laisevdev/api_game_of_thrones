@@ -6,4 +6,5 @@ urlpatterns = [
     path('api/characters/', views.show_characters, name='characters'),
     path('api/housescharacters/', views.show_characters_houses, name='houses_characters'),
     path('api/westeroshouses/', views.westeros_houses, name='houses'),
+     path('api/housesdetails/', views.houses_details, name='houses_details'),
 ]
