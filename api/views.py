@@ -25,11 +25,14 @@ def show_characters_houses(request):
             if house_slug is not None:
                 quote = character.get('quotes')
                 if quote is not None:
-                    characters_with_houses.append({
-                        'name': character['name'],
-                        'house_slug': house_slug,
-                        'quote': character['quotes'][0]
-                    })    
+                    character_slug = character.get('slug')
+                    if character_slug is not None:
+                        characters_with_houses.append({
+                            'name': character['name'],
+                            'house_slug': house_slug,
+                            'quote': character['quotes'][0],
+                            'character_slug': character['slug']
+                        })    
     return render(request, 'api/houses_characters.html', {'characters_with_houses': characters_with_houses})
 
 
