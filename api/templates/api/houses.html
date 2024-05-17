@@ -1,0 +1,21 @@
+{% extends 'api/base.html' %}
+
+{% block content %}
+
+<main>
+    <h1>
+        As casas de Westeros 😍
+    </h1>
+    <h5>
+        Clique nas casas para mais informações 👇😜
+    </h5>
+    {% for house in houses %}    
+    <div class= "houses">
+        <a href="">
+            {{ house }}||
+        </a>   
+    </div>
+    {% endfor %}
+</main>
+
+{% endblock %}
