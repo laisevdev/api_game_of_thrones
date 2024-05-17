@@ -35,6 +35,13 @@ def show_characters_houses(request):
                         })    
     return render(request, 'api/houses_characters.html', {'characters_with_houses': characters_with_houses})
 
+def westeros_houses(request):
+    url = 'https://api.gameofthronesquotes.xyz/v1/houses'
+    response = requests.get(url)
+    data = response.json()
+
+    houses = [house['slug'].upper() for house in data]
+    return render(request, 'api/houses.html', {'houses': houses})
 
 
 
