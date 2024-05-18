@@ -1,0 +1,32 @@
+{% extends 'api/base.html' %}
+
+{% block content %}
+
+<main>
+    <div>
+        <h1>Tudo sobre a melhor série dos últimos tempos!</h1>
+        <h2>Os melhores personagens dos últimos tempos:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome:</th>
+                    <th>Slug:</th>
+                    <th>Casa:</th>
+                    <th>Citação:</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for character in characters_with_houses %}
+                    <tr>
+                        <td>{{ character.name }}</td>
+                        <td>{{ character.character_slug }}</td>
+                        <td>{{ character.house_slug }}</td>
+                        <td>"{{ character.quote }}"</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
+
+{% endblock %}
