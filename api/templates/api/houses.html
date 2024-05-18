@@ -1,21 +1,20 @@
 {% extends 'api/base.html' %}
 
 {% block content %}
-
 <main>
-    <h1>
-        As casas de Westeros 😍
-    </h1>
-    <h5>
-        Clique nas casas para mais informações 👇😜
-    </h5>
-    {% for house in houses %}    
-    <div class= "houses">
-        <a href="">
-            {{ house }}||
-        </a>   
-    </div>
+    <h1>As casas de Westeros 😍</h1>
+    <h5>Clique nas casas para mais informações 👇😜</h5>
+    {% for house in houses %}
+        <div class="houses">
+            <a href="{% url 'details' slug=house.slug %}">
+                {{ house.slug }} ||
+            </a>
+        </div>
     {% endfor %}
+    <br>
+    <div class="inicio">
+        <a href="{% url 'index' %}">Voltar Página Inicial</a>
+    </div>
 </main>
-
 {% endblock %}
+
