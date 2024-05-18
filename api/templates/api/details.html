@@ -1,0 +1,17 @@
+{% extends 'api/base.html' %}
+
+{% block content %}
+<main>
+    <h1>{{ house_details.name }}</h1>
+    <h2>Membros da Casa:</h2>
+    <ul>
+        {% for member in house_details.members %}
+            <li>{{ member }}</li>
+        {% endfor %}
+    </ul>
+    <div class="inicio">
+        <a href="{% url 'index' %}">Voltar à Página Inicial</a>
+    </div>
+</main>
+{% endblock %}
+
