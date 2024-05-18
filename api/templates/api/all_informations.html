@@ -1,0 +1,32 @@
+{% extends 'api/base.html' %}
+
+{% block content %}
+
+<main class= "house_details">
+    <table>
+        <thead>
+            <tr>
+                <th>Nome da Casa</th>
+                <th>Slug da Casa</th>
+                <th>Membros</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for house in all_about_houses %}
+                <tr>
+                    <td>{{ house.house_slug }}</td>
+                    <td>{{ house.name }}</td>
+                    <td>
+                        <ul>
+                            {% for member in house.members %}
+                                <li>{{ member }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</main>
+
+{% endblock %}
