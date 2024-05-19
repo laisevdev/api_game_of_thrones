@@ -33,7 +33,7 @@ tr {
     width: 250px;
 }
 
-td, th {
+th {
     margin: 15px;
     padding: 15px;
     font-size: 20px;
@@ -88,3 +88,46 @@ td, th {
     height: 100px;
 }
 
+/* characters.html */
+
+.main {
+    display: flex;
+}
+
+.characters{
+    display: inline;
+}
+
+.characters td {
+    align-items: center;
+    justify-content: center;
+    text-align:justify;
+    margin: 0 auto;
+    padding:10px 0 10px 35px;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.more_about_characters {
+    display: flex;
+}
+
+.more_about_characters a {
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin: 35px auto;
+    color: #fff;
+    width: 280px;
+    height: 50px;
+    background-color: #764207;
+    box-shadow: 8px 8px 16px -6px #484848;
+    border-radius: 7px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.more_about_characters a:hover {
+    background-color: #760707;
+}
