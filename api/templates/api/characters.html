@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<main>
+<main class="main">
     <div>
         <h1>
             Tudo sobre a melhor série dos últimos tempos!
@@ -13,19 +13,21 @@
         <table>
             <thead>
                 <tr>
-                    <th>Nome</th>
-                  
+                    <th>Nomes:</th>                  
                 </tr>
             </thead>
             <tbody>
                 {% for character in characters %}
-                    <tr>
+                    <tr class="characters">
                         <td>{{ character }}</td>
                         
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
+        <div class="more_about_characters">
+            <a href="{% url 'houses_characters' %}"> Saiba mais sobre os personagens</a>
+        </div>
     </div>
 </main>
 
