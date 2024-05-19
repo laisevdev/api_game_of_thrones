@@ -40,10 +40,10 @@ def westeros_houses(request):
     response = requests.get(url)
     data = response.json()
 
-    houses = [house['slug'].upper() for house in data]
+    houses = [{'name': house['name'], 'slug': house['slug'].upper()} for house in data]
     return render(request, 'api/houses.html', {'houses': houses})
 
-def houses_details(request):
+def all_info_about_got(request):
     url = 'https://api.gameofthronesquotes.xyz/v1/houses'
     response = requests.get(url)
     data = response.json()
@@ -64,5 +64,32 @@ def houses_details(request):
                 'members': member_names
             })
     return render(request, 'api/houses_details.html', {'all_about_houses': all_about_houses})
+
+def details(request, slug):
+    url = 'https://api.gameofthronesquotes.xyz/v1/houses/'
+    response = requests.get(url)
+    data = response.json()
+
+    house_details = None
+
+    for house in data:
+        house_slug = house.get('slug').upper()
+        if house_slug and house_slug == slug:
+            name = house.get('name')
+            members = house.get('members')
+
+            if name and members:
+                member_names = [member.get('name') for member in members if member.get('name')]
+                house_details = {
+                    'name': name,
+                    'house_slug': house_slug,
+                    'members': member_names
+                }
+                break 
+
+    if house_details is None:
+        return("House not found")
+
+    return render(request, 'api/details.html', {'house_details': house_details})
 
 
