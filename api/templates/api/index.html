@@ -1,21 +1,32 @@
-{% extends 'api/base.html' %}
+{% extends 'api/base.html' %} {% load static %} {% block content %}
 
-{% block content %}
+<main class="main-index">
+  <div class="title-index">
+    <h1>Tudo sobre a melhor série dos últimos tempos!</h1>
+  </div>
 
-<main>
-    <div>
-        <h1>
-            Tudo sobre a melhor série dos últimos tempos!
-        </h1>
-
-        <h3>
-            Veja todos os personagens no seguinte link: <a href="{% url 'characters' %}"> Clique Aqui!</a>
-        </h3>
-        <br>
-        <h3>
-            Veja todas as casas de Westeros aqui: <a href="{% url 'houses' %}"> Clique Aqui!</a>
-        </h3>
+  <section class="cards">
+    <div class="card">
+      <a href="{% url 'characters' %}">
+        <img
+          src="{% static '/media/houses-got.png' %}"
+          alt="Game of Thrones Serie"
+        />
+      </a>
+      <h5>Personagens em GOT</h5>
     </div>
+    <br />
+
+    <div class="card">
+      <a href="{% url 'houses' %}">
+        <img
+          src="{% static '/media/houses-got.png' %}"
+          alt="Game of Thrones Serie"
+        />
+      </a>
+      <h5>Casas em GOT</h5>
+    </div>
+  </section>
 </main>
 
 {% endblock %}
