@@ -131,3 +131,44 @@ th {
 .more_about_characters a:hover {
     background-color: #760707;
 }
+
+/* index.html */
+
+.main-index {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .title-index {
+    margin-bottom: 20px;
+  }
+  
+  .cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre os cards */
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .card img {
+    max-width: 80%;
+    height: auto;
+  }
+
+  .card:hover {
+    background-color: #b30c0c;
+  }
+  
+  .card h5 {
+    margin-top: 10px;
+  }
+  
